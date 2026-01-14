@@ -1,0 +1,23 @@
+* {
+    background-color: #f0a5dd;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-family: sans-serif;
+
+}
+
+h1 {
+    opacity: .5;
+    color: blueviolet
+}
+
+.login-container {
+    border-style: dashed;
+    color: blueviolet
+
+}
+
+#bdy-txt{
+    text-align:center;
+}
