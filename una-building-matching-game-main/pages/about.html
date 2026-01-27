@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link href="../styles/styles.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-right">
+      <a href="../index.html" target="_blank">Home</a>
+      <a href="game.html" target="_blank">Game</a>
+      <a href="library.html" target="_blank">Library</a>
+      <a class="active" href="about.html">About</a>
+    </div>
+  </div>
+
+
+  <h1>This is the about page! But your first task will be for you to login...</h1>
+
+
+  <div class="login-container">
+    <h2>Plain Login:</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="put ur name frfr" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="giv pass :>" name="password" required>
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+      <div id="message" class="message"></div>
+    </form>
+  </div>
+  <div id="bdy-txt">
+
+
+
+
+    <p>This page will contain resources that helped me to create this website and take you to my personal github where
+      you can see some more of my work, cool? Cool.</p>
+
+    <ul>
+      <li>Item uno</li>
+      <li>Item dos</li>
+      <li>Item tres</li>
+      <li>Item cuatro</li>
+
+    </ul>
+
+    <script>
+      console.log("Password is: key123");
+      console.log("So snoopy lol");
+
+      //when clicked = event > get name and pass
+      //pass an immediately invoked function expression IIFE
+      document.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get form values from the DOM 
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        console.log("username + pwd:", username + ", " + password);
+
+        // Store in session storage
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('password', password);
+        sessionStorage.setItem('loginTimestamp', new Date().toISOString());
+        sessionStorage.setItem('loginAttempts', (parseInt(sessionStorage.getItem('loginAttempts') || '0') + 1).toString());
+
+        // Log to console
+        console.log('session username:', username);
+        console.log('session password:', password);
+
+        window.location.assign("about.html");
+
+      });
+
+    </script>
+</body>
+
+<footer>
+  <!-- una colors {
+      background: #edcf88;
+      color: #582c83;
+  }-->
+
+
+</footer>
+
+</html>
